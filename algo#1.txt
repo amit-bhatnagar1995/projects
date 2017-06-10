@@ -1,0 +1,26 @@
+/* package whatever; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+import java.math.*;
+/* Name of the class has to be "Main" only if the class is public. */
+class Ideone
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		 // create 3 BigInteger objects
+      BigInteger bi1, bi2, bi3;
+
+      bi1 = new BigInteger("3141592653589793238462643383279502884197169399375105820974944592");
+      bi2 = new BigInteger("2718281828459045235360287471352662497757247093699959574966967627");
+
+      // multiply bi1 with bi2 and assign result to bi3
+      bi3 = bi1.multiply(bi2);
+
+      String str = bi1 + " * " + bi2 + " = " +bi3;
+
+      // print bi3 value
+      System.out.println("Multiplication result is " +str);// your code goes here
+	}
+}
