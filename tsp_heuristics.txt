@@ -1,0 +1,42 @@
+#include <iostream>
+#include <stdio.h>
+#include<math.h>
+using namespace std;
+
+int main()
+{
+    int visited[34000];
+    double d[34710],x[34000][5],cost=0;
+    int n,i,j,k,c=0,de;
+    long long mini;
+    for(i=0;i<34000;i++)
+    visited[i]=0;
+    freopen("knap.txt","r",stdin);
+    cin>>n;
+    for(i=1;i<=n;i++)
+    {
+        cin>>de;
+        cin>>x[i][1];
+        cin>>x[i][2];
+    }
+ i=1;visited[1]=1;
+ while(c<n-1)
+  {
+        mini=100000000;
+    for(j=1;j<=n;j++)
+      d[j]=sqrt(((x[i][1]-x[j][1])*(x[i][1]-x[j][1]))+((x[i][2]-x[j][2])*(x[i][2]-x[j][2])));
+
+     for(j=1;j<=n;j++)
+        {
+            if(visited[j]==0&&d[j]<mini)
+                 { mini=d[j];k=j;}
+        }
+        cost+=mini;
+        visited[k]=1;
+     i=k;
+     c++;
+    }
+cost+=sqrt(((x[1][1]-x[k][1])*(x[1][1]-x[k][1]))+((x[1][2]-x[k][2])*(x[1][2]-x[k][2])));
+    cout<<cost<<d[2]<<endl;
+    return 0;
+}
